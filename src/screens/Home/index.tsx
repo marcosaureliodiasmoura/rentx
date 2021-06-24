@@ -6,10 +6,10 @@ import Logo from '../../assets/logo.svg';
 
 import { Car } from '../../components/Car';
 
-import { Container, Header, HeaderContent, TotalCars } from './styles';
+import { CarList, Container, Header, HeaderContent, TotalCars } from './styles';
 
 export function Home() {
-  const carDataOne = {
+  const carData = {
     brand: 'audi',
     name: 'RS 5 Coupé',
     rent: {
@@ -46,9 +46,11 @@ export function Home() {
         </HeaderContent>
       </Header>
 
-      <Car data={carDataOne} />
-      <Car data={carDataTwo} />
-
+      <CarList
+        data={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
+        keyExtractor={(item) => String(item)}
+        renderItem={({ item }) => <Car data={carData} />}
+      />
     </Container>
   );
 }
