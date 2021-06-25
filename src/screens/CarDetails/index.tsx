@@ -1,19 +1,25 @@
 import React from 'react';
 import { BackButton } from '../../components/BackButton';
+import { ImageSlider } from '../../components/ImageSlider';
 
 import { 
   Container,
   Header,
+  CarImages,
+} from './styles';
 
- } from './styles';
-
-export function CarDetails(){
-  return(
+export function CarDetails() {
+  return (
     <Container>
       <Header>
-      <BackButton onPress={() => {}}/>
+        <BackButton onPress={() => {}} />
       </Header>
 
+      <CarImages>
+        <ImageSlider imagesUrl={[]} />
+      </CarImages>
+
+      
     </Container>
-  )
+  );
 }
